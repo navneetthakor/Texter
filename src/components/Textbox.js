@@ -5,8 +5,13 @@ export default function Textbox() {
     setText(event.target.value);
    }
 
-   let handleClick = ()=>{
+   let handleupClick = ()=>{
     let newText = text.toUpperCase();
+    setText(newText);
+   }
+
+   let handlelowClick = ()=>{
+    let newText = text.toLowerCase();
     setText(newText);
    }
 
@@ -28,11 +33,28 @@ export default function Textbox() {
           ></textarea>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit" onClick={handleClick}>
+          <button class="btn btn-primary" type="submit" onClick={handleupClick}>
             Convert to uppercase
+          </button>
+          <button class="btn btn-primary mx-3" type="submit" onClick={handlelowClick}>
+            Convert to lowercase
           </button>
         </div>
       </div>
+
+    <div className="container">
+        <h2>Your text summary</h2>
+        <p>{text.split(" ").length} words and {text.length} charachters</p>
+    </div>
+    
+    <div className="container my-3">
+        <h2>Preview</h2>
+        <h4 className="my-2">Upper case</h4>
+        <p>{text.toUpperCase()}</p>
+        <h4 className="my-2">Lower case</h4>
+        <p>{text.toLowerCase()}</p>
+    </div>
+
     </div>
   );
 }
