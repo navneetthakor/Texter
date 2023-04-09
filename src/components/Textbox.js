@@ -10,6 +10,11 @@ export default function Textbox() {
     setText(newText);
    }
 
+   let handleclrClick = ()=>{
+    let newText = "";
+    setText(newText);
+   }
+
    let handlelowClick = ()=>{
     let newText = text.toLowerCase();
     setText(newText);
@@ -38,6 +43,9 @@ export default function Textbox() {
           </button>
           <button class="btn btn-primary mx-3" type="submit" onClick={handlelowClick}>
             Convert to lowercase
+          </button>
+          <button class="btn btn-primary mx-3" type="submit" onClick={handleclrClick}>
+            Clear
           </button>
         </div>
       </div>
