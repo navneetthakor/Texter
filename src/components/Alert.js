@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Alert() {
+export default function Alert(props) {
   return (
-    <div class="alert alert-success" role="alert" id="liveAlertBtn">
-  A simple success alert—check it out!
+    props.alert && <div class={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+  <strong>{props.alert.type}</strong> {props.alert.msg}
 </div>
   )
 }

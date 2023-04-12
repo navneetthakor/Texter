@@ -8,16 +8,19 @@ export default function Textbox(props) {
   let handleupClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.func('converted to uppercase','success');
   };
 
   let handleclrClick = () => {
     let newText = "";
     setText(newText);
+    props.func('cleared the textbox','success');
   };
 
   let handlelowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.func('converted to lowercase','success');
   };
 
   const [text, setText] = useState("Enter your text");
