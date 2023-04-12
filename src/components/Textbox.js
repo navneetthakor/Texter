@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 
-export default function Textbox() {
-   let handleChange = (event)=>{
+export default function Textbox(props) {
+  let handleChange = (event) => {
     setText(event.target.value);
-   }
+  };
 
-   let handleupClick = ()=>{
+  let handleupClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
-   }
+  };
 
-   let handleclrClick = ()=>{
+  let handleclrClick = () => {
     let newText = "";
     setText(newText);
-   }
+  };
 
-   let handlelowClick = ()=>{
+  let handlelowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
-   }
+  };
 
   const [text, setText] = useState("Enter your text");
 
   return (
     <div>
-      <div className="container my-4">
+      <div
+        className="container my-4"
+        style={{
+          backgroundColor: props.mode === "light" ? "white" : "#393f86",
+          color: props.mode === "light" ? "black" : "white",
+        }}
+      >
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">
             <h1>Convert string to uppercase here</h1>
@@ -34,35 +40,52 @@ export default function Textbox() {
             value={text}
             id="exampleFormControlTextarea1"
             rows="8"
+            style={{
+              backgroundColor: props.mode === "light" ? "white" : "#393f86",
+              color: props.mode === "light" ? "black" : "white",
+            }}
             onChange={handleChange}
           ></textarea>
         </div>
-        <div class="col-12">
+        <div class="col-12" >
           <button class="btn btn-primary" type="submit" onClick={handleupClick}>
             Convert to uppercase
           </button>
-          <button class="btn btn-primary mx-3" type="submit" onClick={handlelowClick}>
+          <button
+            class="btn btn-primary mx-3"
+            type="submit"
+            onClick={handlelowClick}
+          >
             Convert to lowercase
           </button>
-          <button class="btn btn-primary mx-3" type="submit" onClick={handleclrClick}>
+          <button
+            class="btn btn-primary mx-3"
+            type="submit"
+            onClick={handleclrClick}
+          >
             Clear
           </button>
         </div>
       </div>
 
-    <div className="container">
+      <div className="container" style={{
+          color: props.mode === "light" ? "black" : "white",
+        }}>
         <h2>Your text summary</h2>
-        <p>{text.split(" ").length} words and {text.length} charachters</p>
-    </div>
-    
-    <div className="container my-3">
+        <p>
+          {text.split(" ").length} words and {text.length} charachters
+        </p>
+      </div>
+
+      <div className="container my-3" style={{
+          color: props.mode === "light" ? "black" : "white",
+        }}>
         <h2>Preview</h2>
         <h4 className="my-2">Upper case</h4>
-        <p>{text.toUpperCase()}</p>
+        <p>{text===""?'ENTER TEXT TO PREVIEW':text.toUpperCase()}</p>
         <h4 className="my-2">Lower case</h4>
-        <p>{text.toLowerCase()}</p>
-    </div>
-
+        <p>{text===""?'enter text to preview':text.toLowerCase()}</p>
+      </div>
     </div>
   );
 }
