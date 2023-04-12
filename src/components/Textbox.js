@@ -27,7 +27,7 @@ export default function Textbox(props) {
       <div
         className="container my-4"
         style={{
-          backgroundColor: props.mode === "light" ? "white" : "#393f86",
+          backgroundColor: props.mode === "light" ? "white" : "#001269",
           color: props.mode === "light" ? "black" : "white",
         }}
       >
@@ -41,7 +41,7 @@ export default function Textbox(props) {
             id="exampleFormControlTextarea1"
             rows="8"
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "#393f86",
+              backgroundColor: props.mode === "light" ? "white" : "#001269",
               color: props.mode === "light" ? "black" : "white",
             }}
             onChange={handleChange}
