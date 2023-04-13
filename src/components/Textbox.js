@@ -17,6 +17,11 @@ export default function Textbox(props) {
     props.func('cleared the textbox','success');
   };
 
+  let handlecopyClick = ()=>{
+    navigator.clipboard.writeText(text);
+    props.func('copied the textbox','success');
+  }
+
   let handlelowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
@@ -41,7 +46,7 @@ export default function Textbox(props) {
           <textarea
             class="form-control border-2"
             value={text}
-            id="exampleFormControlTextarea1"
+            id="text1"
             rows="8"
             style={{
               backgroundColor: props.mode === "light" ? "white" : "#001269",
@@ -68,6 +73,13 @@ export default function Textbox(props) {
           >
             Clear
           </button>
+          <button
+            class="btn btn-primary mx-3"
+            type="submit"
+            onClick={handlecopyClick}
+          >
+            Copy to ClipBoard
+          </button>
         </div>
       </div>
 
@@ -76,7 +88,7 @@ export default function Textbox(props) {
         }}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").filter((e)=>{return e.length!==0}).length} words and {text.length} charachters
+          {text.split(/\s+/).filter((e)=>{return e.length!==0}).length} words and {text.length} charachters
         </p>
       </div>
 

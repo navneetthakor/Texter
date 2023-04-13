@@ -43,7 +43,7 @@ function App() {
 
   return (
     <>
-    <Navbar title="My App" mode = {mode} togmod = {toggleMode} func={showAlert}/>
+    <Navbar title="Texter" mode = {mode} togmod = {toggleMode} func={showAlert}/>
     <Alert alert={alert}/>
     <Routes>
     <Route exact path='/' element={<Textbox mode = {mode} func={showAlert}/>}>

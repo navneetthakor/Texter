@@ -28,7 +28,7 @@ export default function Navbar(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className={`nav-link active text-${props.mode === "light" ? "dark" : "light"}`}
+                  className={`nav-link text-${props.mode === "light" ? "dark" : "light"}`}
                   aria-current="page"
                   to="/"
                 >
