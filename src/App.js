@@ -1,10 +1,11 @@
 
 import './App.css';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Textbox from './components/Textbox';
 import React, { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -43,9 +44,11 @@ function App() {
     <>
     <Navbar title="My App" mode = {mode} togmod = {toggleMode} func={showAlert}/>
     <Alert alert={alert}/>
-    <Textbox mode = {mode} func={showAlert}/>
-
-    {/* <About /> */}
+    <Routes>
+    <Route exact path='/' element={<Textbox mode = {mode} func={showAlert}/>}>
+    </Route>
+    <Route exact path='/about' element={<About />}/>
+    </Routes>
     </>
   );
 }

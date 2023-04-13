@@ -28,7 +28,7 @@ export default function Textbox(props) {
   return (
     <div>
       <div
-        className="container my-4"
+        className="container"
         style={{
           backgroundColor: props.mode === "light" ? "white" : "#001269",
           color: props.mode === "light" ? "black" : "white",
@@ -76,7 +76,7 @@ export default function Textbox(props) {
         }}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} charachters
+          {text.split(" ").filter((e)=>{return e.length!==0}).length} words and {text.length} charachters
         </p>
       </div>
 
