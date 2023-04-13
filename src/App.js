@@ -4,6 +4,7 @@ import Alert from './components/Alert';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import Textbox from './components/Textbox';
+// import logo from './texterlogo.png';
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 
